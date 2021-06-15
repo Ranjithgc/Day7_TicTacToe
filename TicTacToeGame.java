@@ -60,6 +60,18 @@ public class TicTacToeGame {
 			System.out.println();
 		}
 	}	
+
+	/**
+	 * uc5: checking the free space before making the desired move
+	 */
+	private static boolean isSpaceFree(int index) {
+		try {
+			return board[index] == ' ';
+		} catch (ArrayIndexOutOfBoundsException e) {
+
+		}
+		return false;
+	}	
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Tic Tac Toe Game");
@@ -75,5 +87,6 @@ public class TicTacToeGame {
 		t1.show();
 		move(player);
 		t1.show();
+		isSpaceFree(player);
 	}
 }
