@@ -18,7 +18,7 @@ public class TicTacToeGame {
 	}
 
 	/*
-	 * uc2 allow the palyer to choose a letter X or O
+	 * uc2: allow the palyer to choose a letter X or O
 	 */
 	public static char chooseLetter(char userChoose) {
 		char computerChoose = ' ';
@@ -32,6 +32,17 @@ public class TicTacToeGame {
 		return computerChoose;
 	}
 
+	/**
+	 * uc3:to display the current board
+	 */
+	public void show() {
+		System.out.println("\n" + board[1] + " | " + board[2] + " | " + board[3]);
+		System.out.println("-------------");
+		System.out.println("\n" + board[4] + " | " + board[5] + " | " + board[6]);
+		System.out.println("------------");
+		System.out.println("\n" + board[7] + " | " + board[8] + " | " + board[9]);
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Tic Tac Toe Game");
 		TicTacToeGame t1 = new TicTacToeGame();
@@ -43,5 +54,6 @@ public class TicTacToeGame {
 		char computer = chooseLetter(player);
 		System.out.println("player Symbol :" + player);
 		System.out.println("computer symbol: " + computer);
+		t1.show();
 	}
 }
