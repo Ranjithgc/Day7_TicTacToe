@@ -73,6 +73,22 @@ public class TicTacToeGame {
 		return false;
 	}	
 	
+	/**
+	 * uc6: do a toss to check who plays first
+	 */
+	public static int toss() {
+
+		Random random = new Random();
+		int value = 1 + random.nextInt(2 - 1 + 1);
+		if (value == 1) {
+			System.out.println("User will play first");
+			return value;
+		} else {
+			System.out.println("Computer will play first ");
+			return value;
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Tic Tac Toe Game");
 		TicTacToeGame t1 = new TicTacToeGame();
@@ -88,5 +104,13 @@ public class TicTacToeGame {
 		move(player);
 		t1.show();
 		isSpaceFree(player);
+		int first = toss();
+		if (first == 1) {
+			move(player);
+		} else {
+			move(player);
+		}
+		System.out.println("Current Board:");
+		t1.show();
 	}
 }
