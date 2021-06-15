@@ -42,6 +42,24 @@ public class TicTacToeGame {
 		System.out.println("------------");
 		System.out.println("\n" + board[7] + " | " + board[8] + " | " + board[9]);
 	}
+
+	/**
+	 * uc4: insert letter between the index 0-9
+	 */
+	public static void move(char letter) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter index for user between 0-9");
+		int index = sc.nextInt();
+		try {
+			if (board[index] == ' ') {
+				board[index] = letter;
+			} else {
+				System.out.println("not empty");
+			}
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println();
+		}
+	}	
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Tic Tac Toe Game");
@@ -54,6 +72,8 @@ public class TicTacToeGame {
 		char computer = chooseLetter(player);
 		System.out.println("player Symbol :" + player);
 		System.out.println("computer symbol: " + computer);
+		t1.show();
+		move(player);
 		t1.show();
 	}
 }
